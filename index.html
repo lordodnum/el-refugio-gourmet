@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Refugio Gourmet</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        /* === ESTILOS GENERALES (CSS PURO) === */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            color: #333;
+            background-color: #f9f7f2;
+            /* Color crema base */
+            position: relative;
+        }
+
+        /* === FONDO DE ESPECIAS (La textura) === */
+        .fondo-patron {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            /* Se va al fondo */
+            /* Aquí usamos tu imagen de especias */
+            background-image: url('img/fondo_sg_01.jpg');
+            background-size: 400px;
+            /* Tamaño del dibujo */
+            background-repeat: repeat;
+            opacity: 0.15;
+            /* Muy suavecito */
+        }
+
+        /* === HEADER (PORTADA) === */
+        header {
+            height: 100vh;
+            /* Ocupa toda la pantalla */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        /* El Logo estilo "Sticker" */
+        .logo-contenedor {
+            background-color: white;
+            padding: 20px;
+            border-radius: 50%;
+            /* Círculo perfecto */
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            /* Sombra elegante */
+            margin-bottom: 40px;
+            display: inline-block;
+        }
+
+        .logo-img {
+            width: 250px;
+            /* Tamaño del logo */
+            height: auto;
+            border-radius: 50%;
+            display: block;
+        }
+
+        /* Botón Verde */
+        .btn-principal {
+            background-color: #25D366;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.3s, background-color 0.3s;
+            text-transform: uppercase;
+            border: 1px solid #1ebc57;
+        }
+
+        .btn-principal:hover {
+            background-color: #1ebc57;
+            transform: translateY(-3px);
+            /* Se mueve un poquito al pasar el mouse */
+        }
+
+        /* === SECCIÓN PRODUCTOS === */
+        .seccion-productos {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .titulo-seccion {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            /* Letra elegante para título */
+            font-size: 2.5rem;
+            color: #8B4513;
+            /* Color café tierra */
+            margin-bottom: 50px;
+        }
+
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        /* Tarjeta de Producto */
+        .producto-card {
+            background: rgba(255, 255, 255, 0.9);
+            /* Blanco semitransparente */
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .producto-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .producto-img {
+            width: 100%;
+            height: 250px;
+            object-fit: contain;
+        }
+
+        .info {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .info p {
+            color: #666;
+            margin-bottom: 20px;
+            min-height: 50px;
+        }
+
+        .precio {
+            display: block;
+            color: #2e7d32;
+            font-weight: bold;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #128c7e;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="fondo-patron"></div>
+
+    <header>
+        <div class="logo-contenedor">
+            <img src="img/logo_sg_2.2.png" alt="El Refugio Gourmet" class="logo-img">
+        </div>
+
+        <a href="#productos" class="btn-principal">Ver Catálogo</a>
+    </header>
+
+    <section id="productos" class="seccion-productos">
+        <h2 class="titulo-seccion">Nuestros Productos</h2>
+
+        <div class="grid-productos">
+
+            <article class="producto-card">
+                <img src="img/packs.png" alt="Pack de Aliños" class="producto-img">
+                <div class="info">
+                    <h3>Pack de Aliños</h3>
+                    <p>Venta de los aliños por pack.</p>
+                    <span class="precio">$15.000</span>
+                    <button class="btn-whatsapp" onclick="pedir('Pack de Aliños')">Pedir por WhatsApp</button>
+                </div>
+            </article>
+
+            <article class="producto-card">
+                <img src="img/pandepascua_mejorado.png" alt="Ingredientes Pan de Pascua" class="producto-img">
+                <div class="info">
+                    <h3>Ingredientes Pan de Pascua</h3>
+                    <p>Ingredientes seleccionados para tu pan de pascua.</p>
+                    <span class="precio">$0</span>
+                    <button class="btn-whatsapp" onclick="pedir('Ingredientes Pan de Pascua')">Pedir por
+                        WhatsApp</button>
+                </div>
+            </article>
+
+            <article class="producto-card">
+                <img src="img/colamono_mejorado.png" alt="Ingredientes para Cola de mono" class="producto-img">
+                <div class="info">
+                    <h3>Ingredientes para Cola de mono</h3>
+                    <p>Ingredientes seleccionados para cola de mono.</p>
+                    <span class="precio">$0</span>
+                    <button class="btn-whatsapp" onclick="pedir('Ingredientes para Cola de mono')">Pedir por
+                        WhatsApp</button>
+                </div>
+            </article>
+
+            <article class="producto-card">
+                <img src="img/pasas_mejoradas.png" alt="Variedades de Pasas" class="producto-img">
+                <div class="info">
+                    <h3>Variedades de Pasas</h3>
+                    <p>Variedades de pasas seleccionadas.</p>
+                    <span class="precio">$0</span>
+                    <button class="btn-whatsapp" onclick="pedir('Variedades de Pasas')">Pedir por WhatsApp</button>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <script>
+        function pedir(producto) {
+            let telefono = "56959214002"; // <--- CAMBIA ESTO POR EL REAL
+            let mensaje = "Hola Refugio Gourmet! Me interesa comprar: " + producto;
+            let url = "https://wa.me/" + telefono + "?text=" + encodeURIComponent(mensaje);
+            window.open(url, '_blank');
+        }
+    </script>
+
+</body>
+
+</html>
